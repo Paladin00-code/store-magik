@@ -1,9 +1,6 @@
 <template>
     <div class="vue-tempalte">
-        <div class="vertical-center">
-        <div class="inner-block">
         <form>
-            
             <h3>Forgot Password</h3>
 
             <div class="form-group">
@@ -14,8 +11,6 @@
             <button type="submit" class="btn btn-dark btn-lg btn-block">Reset password</button>
 
         </form>
-        </div>
-        </div>
     </div>
 </template>
 

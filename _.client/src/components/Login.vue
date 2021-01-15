@@ -1,7 +1,5 @@
 <template>
     <div class="vue-tempalte">
-        <div class="vertical-center">
-        <div class="inner-block">
         <form>
             <h3>Sign In</h3>
 
@@ -22,8 +20,6 @@
             </p>
 
         </form>
-        </div>
-        </div>
     </div>
 </template>
 

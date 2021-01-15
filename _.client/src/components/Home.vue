@@ -1,5 +1,6 @@
 <template>
     <div class="vue-tempalte">
+        
     </div>
 </template>
 
@@ -7,7 +8,7 @@
     import axios from 'axios';
     export default {
         data() {
-            users: []
+            []
         },
         methods: {
         loadUsers(){

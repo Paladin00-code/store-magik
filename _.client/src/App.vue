@@ -19,7 +19,11 @@
 
     <!-- Main -->
     <div class="App">
-         <router-view />
+      <div class="vertical-center">
+        <div class="inner-block">
+          <router-view />
+        </div>
+      </div>
     </div>
   </div>
 </template>

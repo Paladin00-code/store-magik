@@ -16,7 +16,7 @@ const regUserRouter = require('./routes/regUser')
 
 
 // set routes
-// app.use('/', express.static(path.join(__dirname, 'client/dist')))
+app.use('/', express.static(path.join(__dirname, 'client/dist')))
 // app.use('/', root+'client/dist')
 app.use('/auth', authRouter)
 app.use('/regUser', regUserRouter)
