@@ -1,25 +1,29 @@
 <template>
-  <div class="vue-tempalte">
-    <!-- Navigation -->
-    <nav class="navbar shadow bg-dark rounded justify-content-between flex-nowrap flex-row fixed-top">
-      <div class="container">
-        <a class="navbar-brand float-left" href="/">
-          Home
-        </a>
-        <ul class="nav navbar-nav flex-row float-right">
-          <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="btn btn-outline-primary" to="/signup">Sign up</router-link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Main -->
-    <div class="App">
-         <router-view />
-    </div>
+  <div id="app">
+    <sMainWrapper/>
   </div>
+  
+  <!-- <router-view/> -->
 </template>
+
+<script>
+import sMainWrapper from './components/S-main-wrapper'
+
+export default {
+  name: 'app',
+  components: {
+    sMainWrapper
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #13304d;
+  margin-top: 20px;
+}
+</style>
