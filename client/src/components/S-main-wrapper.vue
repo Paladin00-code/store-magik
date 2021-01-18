@@ -1,7 +1,7 @@
 <template>
   <div class="s-main-wrapper">
-    <SCart v-if="CART.length" :cart_data="CART" />
     <SCatalog />
+    <SCart v-if="CART.length" :cart_data="CART" />
   </div>
 </template>
 <script>

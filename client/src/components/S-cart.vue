@@ -1,9 +1,8 @@
-
 <template>
   <div class="s-cart">
-    cart
+    <h1>Cart</h1>
     <p v-if="!cart_data.length">There are no products in cart...</p>
-    <v-cart-item
+    <vCartItem
       v-for="item in cart_data"
       :key="item.article"
       :cart_item_data="item"
@@ -12,25 +11,33 @@
 </template>
 
 <script>
-import sCartItem from "./S-cart-item";
+import vCartItem from "./S-cart-item";
+
+import { mapActions } from "vuex";
 export default {
   name: "s-cart",
-  comments: {
-    sCartItem,
+  components: {
+    vCartItem,
   },
   props: {
     cart_data: {
       type: Array,
       default() {
-        return []
+        return [];
       },
     },
+  },
+  data() {
+    return {};
+  },
+  computed: {},
+  methods: {
+    ...mapActions(["DELETE_FROM_CART"]),
   },
 };
 </script>
 
-<style lang="scss" scoped>
-@import "@/assets/styles/styles.scss";
+<style lang="scss">
 .s-cart {
   margin-bottom: 100px;
   &__total {
@@ -38,16 +45,12 @@ export default {
     bottom: 0;
     right: 0;
     left: 0;
-    padding: $pad * 2 $pad * 3;
+    padding: 16 24;
     display: flex;
     justify-content: center;
     // background: $green-bg;
     color: #ffffff;
     font-size: 20px;
   }
-  .total__name {
-    margin-right: $marg * 2;
-  }
 }
 </style>
-
