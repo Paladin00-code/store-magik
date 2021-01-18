@@ -1,25 +1,25 @@
 <template>
   <div id="app">
-    <sMainWrapper/>
+    <sMainWrapper />
   </div>
-  
+
   <!-- <router-view/> -->
 </template>
 
 <script>
-import sMainWrapper from './components/S-main-wrapper'
+import sMainWrapper from "./components/S-main-wrapper";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    sMainWrapper
-  }
-}
+    sMainWrapper,
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

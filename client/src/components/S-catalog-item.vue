@@ -8,8 +8,7 @@
     />
     <p class="s-catalog-item__name">name: {{ product_data.name }}</p>
     <p class="s-catalog-item__price">price: {{ product_data.price }} $</p>
-    <!-- <p class="s-catalog-item__article">articl: {{ product_data.article }}</p> -->
-    <p class="s-catalog-item__available">
+      <p class="s-catalog-item__available">
       avalible: {{ product_data.available }}
     </p>
     <p class="s-catalog-item__category">
@@ -17,7 +16,7 @@
     </p>
     <button
       class="s-catalog-item__add_to_cart_button"
-      @click="sendDataToParent"
+      @click="addToCart"
     >
       Add to cart
     </button>
@@ -40,8 +39,8 @@ export default {
     },
   },
   methods: {
-    sendDataToParent() {
-      this.$emit("sendArticle", this.product_data.article);
+    addToCart() {      
+      this.$emit('addToCart', this.product_data)
     },
   },
 };
