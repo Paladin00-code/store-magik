@@ -1,6 +1,9 @@
-
 <template>
   <div class="s-catalog">
+    <router-link :to="{ name: 'cart', params: { cart_data: CART } }">
+      <div class="s-catalog__link_to_cart">Cart: {{ CART.length }}</div>
+    </router-link>
+
     <h1 class="catalog-title">Catalog</h1>
     <div class="s-catalog__list">
       <SCatalogItem
@@ -27,14 +30,12 @@ export default {
   },
   props: {},
   computed: {
-    ...mapGetters(["PRODUCTS"]),
+    ...mapGetters(["PRODUCTS", "CART"]),
   },
   methods: {
-    ...mapActions(["GET_PRODUCTS_FROM_API", "ADD_TO_CART"
-    ]),
+    ...mapActions(["GET_PRODUCTS_FROM_API", "ADD_TO_CART"]),
     addToCart(data) {
-      
-      this.ADD_TO_CART(data)
+      this.ADD_TO_CART(data);
     },
   },
   mounted() {
@@ -55,11 +56,11 @@ export default {
   }
   &__link_to_cart {
     position: fixed;
-    top: 80px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     padding: $pad * 2;
-    border: solid 1px #aeaeae;
-    background: #ffffff;
+    border: solid 1px #ffffff;
+    background: #7dcc9e;
   }
 }
 .filters {

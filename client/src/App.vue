@@ -2,8 +2,6 @@
   <div id="app">
     <sMainWrapper />
   </div>
-
-  <!-- <router-view/> -->
 </template>
 
 <script>
