@@ -1,6 +1,6 @@
 <template>
   <div class="s-catalog">
-    <router-link :to="{ name: 'cart', params: { cart_d:CART } }">
+    <router-link :to="{ name: 'cart'}">
       <div class="s-catalog__link_to_cart">Cart: {{ CART.length }}</div>
     </router-link>
 
@@ -25,9 +25,6 @@ export default {
   components: {
     SCatalogItem,
   },
-  data() {
-    return {};
-  },
   props: {},
   computed: {
     ...mapGetters(["PRODUCTS", "CART"]),
@@ -40,8 +37,10 @@ export default {
   },
   mounted() {
     this.GET_PRODUCTS_FROM_API();
+    // this.PRODUCTS();
   },
 };
+
 </script>
 
 

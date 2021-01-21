@@ -1,44 +1,36 @@
 <template>
   <div class="s-cart-item">
-    <img
-      class="s-cart-item__image"
-      :src="require('../assets/images/' + cart_item_data.image)"
-      alt=""
-    />
+     <img class="s-cart-item__image" :src=" require('../assets/images/'+cart_item_d.image) " alt="">
     <div class="s-cart-item__info">
-      <p>{{ cart_item_data.name }}</p>
-      <!-- <p>{{cart_item_data.article}}</p> -->
+      <p>{{ cart_item_d.name }}</p>
+      <p>{{cart_item_d.article}}</p>
     </div>
-    <div class="s-cart-item__quantity">
-      <!-- {{cart_item_data.quantity}} -->
-    </div>
+    
     <button @click="deleteFromCart">Delete</button>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "s-cart-item",
   props: {
-    cart_item_data: {
+    cart_item_d: {
       type: Object,
       default() {
         return {};
       },
     },
   },
-  data() {
-    return {};
-  },
   methods: {
     deleteFromCart() {
       this.$emit("deleteFromCart");
     },
   },
-  computed: {},
-  mounted() {
-    // this.$set(this.cart_item_data.quantity, "quantity", 1);
+  computed: {
+    ...mapGetters(["CART"]),
   },
+  
 };
 </script>
 

@@ -27,9 +27,7 @@
 export default {
   name: "S-catalog-item",
   created() {},
-  data() {
-    return {};
-  },
+  
   props: {
     product_data: {
       type: Object,

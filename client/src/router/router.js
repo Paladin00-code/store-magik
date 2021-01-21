@@ -6,7 +6,8 @@ const routes = [
 	{
 		path: '/',
 		name: 'catalog',
-		component: sCatalog
+		component: sCatalog,
+		props: true
 	},
 	{
 		path: '/cart',

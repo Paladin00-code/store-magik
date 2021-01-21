@@ -35,16 +35,20 @@ export default createStore({
 		},
 		DELETE_FROM_CART({ commit }, index) {
 			commit('REMOVE_FROM_CART', index);
-		}
+		},
+
 	},
 
 	getters: {
-		PRODUCTS(state) {
+		PRODUCTS(state) {			
 			return state.products;
 		},
 		CART(state) {
 			return state.cart;
-		}
+		},
 	},
-	modules: {}
+	modules: {},
+	mounted () {
+		
+ },
 });
