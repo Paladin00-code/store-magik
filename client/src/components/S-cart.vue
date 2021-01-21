@@ -1,7 +1,7 @@
 <template>
   <div class="s-cart">
     <router-link :to="{name: 'catalog'}">
-      <div class="s-catalog__total">Catalog</div>
+      <!-- <div class="s-catalog__total">Catalog</div> -->
     </router-link>
     <h1>Cart</h1>
     <p v-if="!cart_data.length">There are no products in cart...</p>

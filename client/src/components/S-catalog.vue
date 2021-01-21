@@ -44,9 +44,13 @@ export default {
 };
 </script>
 
+
+
+
+
+
 <style lang="scss">
 @import "@/assets/styles/styles.scss";
-
 .s-catalog {
   &__list {
     display: flex;
