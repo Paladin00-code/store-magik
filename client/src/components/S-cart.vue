@@ -1,14 +1,14 @@
 <template>
   <div class="s-cart">
     <router-link :to="{name: 'catalog'}">
-      <div class="s-catalog__total">Catalog</div>
+      <div class="s-catalog__link_to_cart">Catalog</div>
     </router-link>
     <h1>Cart</h1>
-    <p v-if="!cart_data.length">There are no products in cart...</p>
+    <p v-if="!CART.length">There are no products in cart...</p>
     <vCartItem
       v-for="(item, index) in CART"
       :key="item.article"
-      :cart_item_data="item"
+      :cart_item_d="item"
       @deleteFromCart="deleteFromCart(index)"
     />
   </div>

@@ -1,11 +1,15 @@
 <template>
   <div class="s-cart-item">
-     <img class="s-cart-item__image" :src=" require('../assets/images/'+cart_item_d.image) " alt="">
+    <img
+      class="s-cart-item__image"
+      :src="require('../assets/images/' + cart_item_d.image)"
+      alt=""
+    />
     <div class="s-cart-item__info">
       <p>{{ cart_item_d.name }}</p>
-      <p>{{cart_item_d.article}}</p>
+      <p>{{ cart_item_d.article }}</p>
     </div>
-    
+
     <button @click="deleteFromCart">Delete</button>
   </div>
 </template>
@@ -30,7 +34,6 @@ export default {
   computed: {
     ...mapGetters(["CART"]),
   },
-  
 };
 </script>
 
