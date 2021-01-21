@@ -1,6 +1,6 @@
 <template>
   <div class="s-catalog">
-    <router-link :to="{ name: 'cart', params: { cart_data: CART } }">
+    <router-link :to="{ name: 'cart', params: { cart_d:CART } }">
       <div class="s-catalog__link_to_cart">Cart: {{ CART.length }}</div>
     </router-link>
 

@@ -4,9 +4,9 @@
       <!-- <div class="s-catalog__total">Catalog</div> -->
     </router-link>
     <h1>Cart</h1>
-    <p v-if="!cart_data.length">There are no products in cart...</p>
+    <p v-if="!cart_d.length">There are no products in cart...</p>
     <vCartItem
-      v-for="(item, index) in cart_data"
+      v-for="(item, index) in cart_d"
       :key="item.article"
       :cart_item_data="item"
       @deleteFromCart="deleteFromCart(index)"
@@ -24,7 +24,7 @@ export default {
     vCartItem,
   },
   props: {
-    cart_data: {
+    cart_d: {
       type: Array,
       default() {
         return [];
@@ -36,7 +36,7 @@ export default {
   },
   computed: {},
   methods: {
-    ...mapActions(["DELETE_FROM_CART", "DELETE_FROM_CART"]),
+    ...mapActions(["DELETE_FROM_CART"]),
     deleteFromCart(index) {
       this.DELETE_FROM_CART(index)
     },
