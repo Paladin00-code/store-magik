@@ -29,6 +29,16 @@ export default createStore({
 		},
 		REMOVE_FROM_CART: (state, index) => {
 			state.cart.splice(index, 1);
+		},
+		CART_ITEM_QUANTITY_REDUCE: (state, index)=>{
+			if (state.cart[index].quantity>1) {
+				state.cart[index].quantity--
+				console.log(state.cart[index].quantity)
+			}
+		},
+		CART_ITEM_QUANTITY_ENLARGE: (state, index)=>{
+			state.cart[index].quantity++
+			console.log(state.cart[index].quantity)
 		}
 	},
 
@@ -48,6 +58,12 @@ export default createStore({
 		},
 		DELETE_FROM_CART({ commit }, index) {
 			commit('REMOVE_FROM_CART', index);
+		},
+		CART_ITEM_QUANTITY_MINES({ commit }, index){
+			commit('CART_ITEM_QUANTITY_REDUCE', index);
+		},
+		CART_ITEM_QUANTITY_PLUS({ commit }, index){
+			commit('CART_ITEM_QUANTITY_ENLARGE', index);
 		}
 	},
 

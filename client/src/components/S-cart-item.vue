@@ -10,15 +10,20 @@
       <p>price: {{ cart_item_d.price }} $</p>
       <p>article:{{ cart_item_d.article }}</p>
     </div>
-    
-    <div class="s-cart-item__quantity"><p>Quantity: </p>{{cart_item_d.quantity}}</div>
+
+    <div class="s-cart-item__quantity">
+      <p>Quantity:</p>
+      <button @click="cartItemQuantityMinus">-</button>
+      {{ cart_item_d.quantity }}
+      <button @click="cartItemQuantityPlus">+</button>
+    </div>
 
     <button @click="deleteFromCart">Delete</button>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters} from "vuex";
 export default {
   name: "s-cart-item",
   props: {
@@ -33,6 +38,12 @@ export default {
     deleteFromCart() {
       this.$emit("deleteFromCart");
     },
+    cartItemQuantityMinus() {
+      this.$emit('cartItemQuantityMinus')
+    },
+    cartItemQuantityPlus(){
+      this.$emit('cartItemQuantityPlus')
+    }
   },
   computed: {
     ...mapGetters(["CART"]),

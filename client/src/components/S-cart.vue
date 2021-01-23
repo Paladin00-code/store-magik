@@ -1,6 +1,6 @@
 <template>
   <div class="s-cart">
-    <router-link :to="{name: 'catalog'}">
+    <router-link :to="{ name: 'catalog' }">
       <div class="s-catalog__link_to_cart">Catalog</div>
     </router-link>
     <h1>Cart</h1>
@@ -10,6 +10,8 @@
       :key="item.article"
       :cart_item_d="item"
       @deleteFromCart="deleteFromCart(index)"
+      @cartItemQuantityMinus="cartItemQuantityMinus(index)"
+      @cartItemQuantityPlus="cartItemQuantityPlus(index)"
     />
   </div>
 </template>
@@ -35,12 +37,18 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["PRODUCTS", "CART"]),
+    ...mapGetters(["CART"]),
   },
   methods: {
-    ...mapActions(["DELETE_FROM_CART", "DELETE_FROM_CART"]),
+    ...mapActions(["DELETE_FROM_CART", "CART_ITEM_QUANTITY_MINES", "CART_ITEM_QUANTITY_PLUS"]),
     deleteFromCart(index) {
-      this.DELETE_FROM_CART(index)
+      this.DELETE_FROM_CART(index);
+    },
+    cartItemQuantityMinus(index) {
+      this.CART_ITEM_QUANTITY_MINES(index);
+    },
+    cartItemQuantityPlus(index) {
+      this.CART_ITEM_QUANTITY_PLUS(index);
     },
   },
 };
@@ -55,8 +63,7 @@ export default {
 // }
 .s-cart {
   // margin-bottom: 100px;
-  
-  
+
   &__total {
     position: fixed;
     bottom: 0;
