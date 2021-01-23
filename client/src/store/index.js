@@ -33,12 +33,10 @@ export default createStore({
 		CART_ITEM_QUANTITY_REDUCE: (state, index)=>{
 			if (state.cart[index].quantity>1) {
 				state.cart[index].quantity--
-				console.log(state.cart[index].quantity)
 			}
 		},
 		CART_ITEM_QUANTITY_ENLARGE: (state, index)=>{
 			state.cart[index].quantity++
-			console.log(state.cart[index].quantity)
 		}
 	},
 

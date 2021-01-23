@@ -13,7 +13,7 @@
       @cartItemQuantityMinus="cartItemQuantityMinus(index)"
       @cartItemQuantityPlus="cartItemQuantityPlus(index)"
     />
-    <div class="s-cart__total-price">The total value of your order: {{total().toFixed(2)}} $</div>
+    <div class="s-cart__total-price">The total value of your order: {{total()}} $</div>
   </div>
 </template>
 
@@ -56,7 +56,7 @@ export default {
       this.CART.map((item)=>{
         total+=item.quantity+item.price
       })
-      return total
+      return total.toFixed(2).toString()
   },
   }
 };
