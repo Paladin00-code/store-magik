@@ -13,6 +13,7 @@
       @cartItemQuantityMinus="cartItemQuantityMinus(index)"
       @cartItemQuantityPlus="cartItemQuantityPlus(index)"
     />
+    <div class="s-cart__total-price">The total value of your order: {{total().toFixed(2)}} $</div>
   </div>
 </template>
 
@@ -37,7 +38,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["CART"]),
+    ...mapGetters(["CART"])
   },
   methods: {
     ...mapActions(["DELETE_FROM_CART", "CART_ITEM_QUANTITY_MINES", "CART_ITEM_QUANTITY_PLUS"]),
@@ -50,7 +51,14 @@ export default {
     cartItemQuantityPlus(index) {
       this.CART_ITEM_QUANTITY_PLUS(index);
     },
+    total(){
+      let total=0
+      this.CART.map((item)=>{
+        total+=item.quantity+item.price
+      })
+      return total
   },
+  }
 };
 </script>
 
