@@ -7,7 +7,7 @@
     />
     <div class="s-cart-item__info">
       <p>{{ cart_item_d.name }}</p>
-      <p>price: {{ cart_item_d.price }} $</p>
+      <p>price: {{ cart_item_d.price.toFixed(2) }} $</p>
       <p>article:{{ cart_item_d.article }}</p>
     </div>
 

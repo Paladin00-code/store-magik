@@ -7,7 +7,7 @@
       alt="img"
     />
     <p class="s-catalog-item__name">name: {{ product_data.name }}</p>
-    <p class="s-catalog-item__price">price: {{ product_data.price }} $</p>
+    <p class="s-catalog-item__price">price: {{ product_data.price.toFixed(2) }} $</p>
       <p class="s-catalog-item__available">
       avalible: {{ product_data.available }}
     </p>
