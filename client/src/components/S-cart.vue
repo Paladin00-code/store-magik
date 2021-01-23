@@ -46,9 +46,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+// body{
+//   background-color: #9be4ad;
+// }
 .s-cart {
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
+  
+  
   &__total {
     position: fixed;
     bottom: 0;

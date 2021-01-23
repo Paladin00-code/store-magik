@@ -43,11 +43,12 @@ export default {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0 8px 0 #e0e0e0;
+  box-shadow: 0 0 15px 0 #807f7f;
+  background-color: rgb(189, 209, 151);
   padding: 8;
   margin-bottom: 8;
   &__image {
-    max-width: 50px;
+    max-width: 80px;
   }
 }
 </style>
