@@ -7,8 +7,11 @@
     />
     <div class="s-cart-item__info">
       <p>{{ cart_item_d.name }}</p>
-      <p>{{ cart_item_d.article }}</p>
+      <p>price: {{ cart_item_d.price }} $</p>
+      <p>article:{{ cart_item_d.article }}</p>
     </div>
+    
+    <div class="s-cart-item__quantity"><p>Quantity: </p>{{cart_item_d.quantity}}</div>
 
     <button @click="deleteFromCart">Delete</button>
   </div>

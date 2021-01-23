@@ -12,7 +12,20 @@ export default createStore({
 			state.products = products;
 		},
 		SET_CART: (state, product) => {
-			state.cart.push(product);
+			if (state.cart.length) {
+				var isProductExists = false;
+				state.cart.map(function(item) {
+					if (item.article == product.article) {
+						isProductExists = true;
+						item.quantity++;
+					}
+				});
+				if (!isProductExists) {
+					state.cart.push(product);
+				}
+			} else {
+				state.cart.push(product);
+			}
 		},
 		REMOVE_FROM_CART: (state, index) => {
 			state.cart.splice(index, 1);
@@ -35,20 +48,17 @@ export default createStore({
 		},
 		DELETE_FROM_CART({ commit }, index) {
 			commit('REMOVE_FROM_CART', index);
-		},
-
+		}
 	},
 
 	getters: {
-		PRODUCTS(state) {			
+		PRODUCTS(state) {
 			return state.products;
 		},
 		CART(state) {
 			return state.cart;
-		},
+		}
 	},
 	modules: {},
-	mounted () {
-		
- },
+	mounted() {}
 });
