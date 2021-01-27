@@ -6,7 +6,7 @@
       "price": 2100.234234234,
       "article": "T1",
       "available": true,
-      "category": "Мужские",
+      "category": "male",
       "quantity": "1"
     },
     {
@@ -15,7 +15,7 @@
       "price": 3150.12312412,
       "article": "T2",
       "available": true,
-      "category": "Женские",
+      "category": "female",
       "quantity": "1"
     },
     {
@@ -24,7 +24,7 @@
       "price": 4200.12312412,
       "article": "T3",
       "available": false,
-      "category": "Женские",
+      "category": "female",
       "quantity": "1"
     },
     {
@@ -33,7 +33,7 @@
       "price": 5300.1245512,
       "article": "T4",
       "available": true,
-      "category": "Мужские",
+      "category": "male",
       "quantity": "1"
     },
     {
@@ -42,7 +42,7 @@
       "price": 6500.3522314,
       "article": "T5",
       "available": false,
-      "category": "Женские",
+      "category": "female",
       "quantity": "1"
     },
     {
@@ -51,7 +51,61 @@
       "price": 8700.4124123,
       "article": "T6",
       "available": true,
-      "category": "11111",
+      "category": "female",
+      "quantity": "1"
+    },
+    {
+      "image": "1.jpg",
+      "name": "T-shirt 7",
+      "price": 2100.234234234,
+      "article": "T7",
+      "available": true,
+      "category": "male",
+      "quantity": "1"
+    },
+    {
+      "image": "2.jpg",
+      "name": "T-shirt 8",
+      "price": 3150.12312412,
+      "article": "T8",
+      "available": true,
+      "category": "female",
+      "quantity": "1"
+    },
+    {
+      "image": "3.jpg",
+      "name": "T-shirt 9",
+      "price": 4200.12312412,
+      "article": "T9",
+      "available": false,
+      "category": "female",
+      "quantity": "1"
+    },
+    {
+      "image": "4.jpg",
+      "name": "T-shirt 10",
+      "price": 5300.1245512,
+      "article": "T10",
+      "available": true,
+      "category": "male",
+      "quantity": "1"
+    },
+    {
+      "image": "5.jpg",
+      "name": "T-shirt 11",
+      "price": 6500.3522314,
+      "article": "T11",
+      "available": false,
+      "category": "female",
+      "quantity": "1"
+    },
+    {
+      "image": "6.jpeg",
+      "name": "T-shirt 12",
+      "price": 8700.4124123,
+      "article": "T12",
+      "available": true,
+      "category": "female",
       "quantity": "1"
     }
   ]

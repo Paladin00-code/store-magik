@@ -13,7 +13,10 @@
       @cartItemQuantityMinus="cartItemQuantityMinus(index)"
       @cartItemQuantityPlus="cartItemQuantityPlus(index)"
     />
-    <div class="s-cart__total-price">The total value of your order: {{total()}} $</div>
+    <div class="s-cart__total">
+      <p class="total__name">Total:</p>
+      <p>{{total()}}</p>
+    </div>
   </div>
 </template>
 
@@ -52,11 +55,13 @@ export default {
       this.CART_ITEM_QUANTITY_PLUS(index);
     },
     total(){
-      let total=0
-      this.CART.map((item)=>{
-        total+=item.quantity+item.price
-      })
-      return total.toFixed(2).toString()
+      var total=0
+      if(this.CART.length){
+        this.CART.map((item)=>{
+          total+=item.quantity*item.price
+        })      
+      }
+      return total.toFixed(2)
   },
   }
 };
@@ -65,24 +70,23 @@ export default {
 
 
 
-<style lang="scss" scoped>
-// body{
-//   background-color: #9be4ad;
-// }
-.s-cart {
-  // margin-bottom: 100px;
-
-  &__total {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 16 24;
-    display: flex;
-    justify-content: center;
-    // background: $green-bg;
-    color: #ffffff;
-    font-size: 20px;
+<style lang="scss">
+.s-cart__total {
+    margin-bottom: 100px;
+    &__total {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 16 24;
+      display: flex;
+      justify-content: center;
+      background-color: green;
+      color: #925252;
+      font-size: 20px;
+    }
+    .total__name {
+      margin-right: 16;
+    }
   }
-}
 </style>

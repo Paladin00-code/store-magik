@@ -1,6 +1,6 @@
 
 <template>
-  <div class="s-catalog-item">
+  <div class="s-catalog-item" @click="addToCart">
     <img
       class="s-catalog-item__image"
       :src="require('../assets/images/' + product_data.image)"
@@ -59,7 +59,8 @@ export default {
 
     transform: scale(1.1);
     transition: 1s;
-    z-index: 10;
+    // z-index: 1;
+    cursor: pointer;
   }
 }
 </style>

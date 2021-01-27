@@ -1,13 +1,33 @@
 <template>
   <div class="s-catalog">
-    <router-link :to="{ name: 'cart'}">
+    <router-link :to="{ name: 'cart' }">
       <div class="s-catalog__link_to_cart">Cart: {{ CART.length }}</div>
     </router-link>
 
     <h1 class="catalog-title">Catalog</h1>
+    <SSelect     
+    @selectCategory="selectCategory" />
+    <!-- <div class="range-slider">
+      <input
+        type="range"
+        min="0"
+        max="1000"
+        step="10"
+        v-model.number="minPrice"
+      />
+    </div>
+    <div class="range-slider">
+      <input
+        type="range"
+        min="0"
+        max="1000"
+        step="10"
+        v-model.number="maxPrice"
+      />
+    </div> -->
     <div class="s-catalog__list">
       <SCatalogItem
-        v-for="product in PRODUCTS"
+        v-for="product in ProductsWithSelectCategories()"
         :key="product.article"
         :product_data="product"
         @addToCart="addToCart"
@@ -18,14 +38,26 @@
 
 <script>
 import SCatalogItem from "./S-catalog-item";
+import SSelect from "./S-select";
 import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "s-catalog",
   components: {
     SCatalogItem,
+    SSelect,
   },
   props: {},
+  data() {
+    return {
+      // categories: [
+      //   { name: "All", value: "all" },
+      //   { name: "male", value: "m" },
+      //   { name: "female", value: "w" },
+      // ],
+      sortedProduct: [],
+    };
+  },
   computed: {
     ...mapGetters(["PRODUCTS", "CART"]),
   },
@@ -34,13 +66,25 @@ export default {
     addToCart(data) {
       this.ADD_TO_CART(data);
     },
+    selectCategory(categoryName) {
+      this.sortedProduct = [];
+      let tmp = this;
+      this.PRODUCTS.map((item) => {
+        if (item.category === categoryName) {
+          tmp.sortedProduct.push(item);
+        }
+      });
+    },
+    ProductsWithSelectCategories() {
+      if (this.sortedProduct.length) {
+        return this.sortedProduct;
+      } else return this.PRODUCTS;
+    },
   },
   mounted() {
     this.GET_PRODUCTS_FROM_API();
-    // this.PRODUCTS();
   },
 };
-
 </script>
 
 
